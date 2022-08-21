@@ -16,3 +16,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Annotate 
+        uses: dkhunt27/action-annotations@v1
+        with:
+          type: notice
+          msg: Annotate This!
