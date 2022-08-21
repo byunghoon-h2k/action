@@ -21,3 +21,8 @@ jobs:
         with:
           type: notice
           msg: Annotate This!
+      - name: Annotate2
+        uses: dkhunt27/action-annotations@beta
+        with:
+          type: notice
+          msg: Annotate This!
