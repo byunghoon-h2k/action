@@ -25,4 +25,4 @@ jobs:
         uses: dkhunt27/action-annotations@beta
         with:
           type: notice
-          msg: My favorite search engine is [Duck Duck Go](https://duckduckgo.com).
+          msg: Link Test https://duckduckgo.com ......
