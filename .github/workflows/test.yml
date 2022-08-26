@@ -2,7 +2,7 @@ name: Branch Test
 on: [workflow_dispatch]
 jobs:
   Explore-GitHub-Actions:
-    if: startsWith(${{ github.ref_name, 'Release-' }}
+    if: startsWith(${{ github.ref_name}}, 'Release-')
     runs-on: ubuntu-latest
     steps:
       - run: echo "메시지 테스트"
@@ -19,7 +19,7 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
   Explore-GitHub-Actions-Error:
-    if: startsWith(${{ github.ref_name, 'Release-' }} == false
+    if: startsWith(${{ github.ref_name}}, 'Release-') == false
     runs-on: ubuntu-latest
     steps:
       - run: echo "Main 브랜치에서만 빌드 가능합니다"
