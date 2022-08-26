@@ -2,7 +2,7 @@ name: Branch Test
 on: [workflow_dispatch]
 jobs:
   Explore-GitHub-Actions:
-    if: startsWith(github.ref_name, 'Release-')
+    if: startsWith({github.ref_name}, 'Release-')
     runs-on: ubuntu-latest
     steps:
       - run: echo "메시지 테스트"
