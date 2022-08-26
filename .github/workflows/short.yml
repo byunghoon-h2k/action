@@ -1,5 +1,7 @@
 name: Bitly Shortener
 on: [workflow_dispatch]
+env:
+  URL: http://www.naver.com
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,7 +18,7 @@ jobs:
         uses: kok-xiong/bitly-shortener-action@master
         with:
           bitlyToken: ${{ secrets.BITLY_TOKEN }}
-          longURL: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+          longURL: https://chart.googleapis.com/chart?chs=512x512&cht=qr&choe=UTF-8&chl=${{ env.URL }}
 
       - name: outputs
         run: echo "${{ steps.shortener.outputs.shortURL }}" / https://github.com/${{ github.repository }}/commit/${{ github.sha }}
