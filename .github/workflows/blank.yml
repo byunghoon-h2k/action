@@ -8,8 +8,11 @@ jobs:
       output1: ${{ steps.step1.outputs.test }}
       output2: ${{ steps.step2.outputs.test }}
     steps:
+      - id: test
+        env:
+          BUILD_BRANCH_NAME: ${{ github.ref_name }}
       - id: step1
-        run: echo "::set-output name=test::hello"
+        run: echo "::set-output name=test::${{ steps.env.BUILD_BRANCH_NAME }}"
       - id: step2
         run: echo "::set-output name=test::world"
   job2:
