@@ -8,6 +8,7 @@ jobs:
       outputtest: ${{ steps.test.env.BUILD_BRANCH_NAME }}
       output1: ${{ steps.step1.outputs.test }}
       output2: ${{ steps.step2.outputs.test }}
+      output3: ${{ steps.step2.outputs.test }}
     steps:
       - id: test
         env:
